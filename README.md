@@ -1,9 +1,10 @@
+#Hinh anh Diagram Bai Tap, Thuc hanh
 
 # TH - Tao Khoa Ngoai
 ![Test Image 3](ThietKeVaTaoCSDL/TH-TaoKhoaNgoai/Diagram.PNG)
 
 #TH- Tao Khoa Chinh
-![Test Image 3](ThietKeVaTaoCSDL/TH-TaoKhoaChinhi/Diagram.PNG)
+![Test Image 3](ThietKeVaTaoCSDL/TH-TaoKhoaChinh/Diagram.PNG)
 
 #TH-Thao Tac Voi Bang
 ![Test Image 3](ThietKeVaTaoCSDL/TH-ThaoTacVoiBang/Diagram.PNG)
