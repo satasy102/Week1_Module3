@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
--- Host: localhost    Database: bt_xacdinhkhoachinhkhoangoaicuabang
+-- Host: localhost    Database: th_taokhoangoai
 -- ------------------------------------------------------
 -- Server version	8.0.21
 
@@ -16,34 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `account`
---
-
-DROP TABLE IF EXISTS `account`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `account` (
-  `account_number` bigint NOT NULL,
-  `account_type` varchar(20) NOT NULL,
-  `date` date NOT NULL,
-  `balance` double NOT NULL,
-  `customer_number` int DEFAULT NULL,
-  PRIMARY KEY (`account_number`),
-  KEY `FK_accountID` (`customer_number`),
-  CONSTRAINT `FK_accountID` FOREIGN KEY (`customer_number`) REFERENCES `customers` (`customer_number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `account`
---
-
-LOCK TABLES `account` WRITE;
-/*!40000 ALTER TABLE `account` DISABLE KEYS */;
-/*!40000 ALTER TABLE `account` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `customers`
 --
 
@@ -51,12 +23,11 @@ DROP TABLE IF EXISTS `customers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customers` (
-  `customer_number` int NOT NULL AUTO_INCREMENT,
-  `fullname` varchar(30) NOT NULL,
-  `address` varchar(60) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `phone` bigint NOT NULL,
-  PRIMARY KEY (`customer_number`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(40) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -70,31 +41,29 @@ LOCK TABLES `customers` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `transactions`
+-- Table structure for table `orders`
 --
 
-DROP TABLE IF EXISTS `transactions`;
+DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `transactions` (
-  `tran_number` bigint NOT NULL,
-  `account_number` bigint NOT NULL,
-  `date` date NOT NULL,
-  `amounts` bigint NOT NULL,
-  `descriptions` text NOT NULL,
-  PRIMARY KEY (`tran_number`),
-  KEY `FK_AccountTrans` (`account_number`),
-  CONSTRAINT `FK_AccountTrans` FOREIGN KEY (`account_number`) REFERENCES `account` (`account_number`)
+CREATE TABLE `orders` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `staff` varchar(50) DEFAULT NULL,
+  `customer_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_CustomerOrder` (`customer_id`),
+  CONSTRAINT `FK_CustomerOrder` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `transactions`
+-- Dumping data for table `orders`
 --
 
-LOCK TABLES `transactions` WRITE;
-/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -106,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-09-08 15:22:45
+-- Dump completed on 2020-09-08 15:23:45
