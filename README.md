@@ -4,7 +4,7 @@
 ![Test Image 3](ThietKeVaTaoCSDL/TH-TaoKhoaNgoai/Diagram.PNG)
 
 #TH- Tao Khoa Chinh
-![Test Image 3](ThietKeVaTaoCSDL/TH-TaoKhoaChinh/Diagram.PNG)
+![Test Image 3](ThietKeVaTaoCSDL/TH-TaoKhoaChinh/DiaGram.PNG)
 
 #TH-Thao Tac Voi Bang
 ![Test Image 3](ThietKeVaTaoCSDL/TH-ThaoTacVoiBang/Diagram.PNG)
