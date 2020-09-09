@@ -14,3 +14,6 @@
 
 # BT- Phan Tich va Thiet Ke CSDL
 ![Test Image 3](ThietKeVaTaoCSDL/BT-PhanTichvaThietKeCSDL/Diagram.PNG)
+
+# BT-Thiet Ke Va Cai Dat CSDL Cho Ung Dung Quan Ly Thu Vien-P1
+![Test Image 3](ThaoTacVoiCSDL\BT-ThietKeVaCaiDatCSDLChoUngDungQuanLyThuVien-P1/Diagram.PNG)
